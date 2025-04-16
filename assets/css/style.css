@@ -1,0 +1,972 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+header {
+  background-color: #343a40;
+  color: #ffc107;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+header nav a {
+  color: #ffc107;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+header nav a:hover {
+  background-color: #ffc107;
+  color: #343a40;
+  border-color: #ffc107;
+}
+
+header nav .btn-register {
+  background-color: #ffc107;
+  color: #343a40;
+  border: 1px solid #ffc107;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+header nav .btn-register:hover {
+  background-color: #343a40;
+  color: #ffc107;
+  border-color: #ffc107;
+}
+
+.index-header {
+  background: #343a40;
+  color: white;
+  padding: 20px 0;
+  border-bottom: 2px solid #ffc107;
+}
+
+.index-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.index-header .logo h1 {
+  font-size: 1.8rem;
+  color: #ffc107;
+  margin: 0;
+  font-weight: bold;
+}
+
+.index-header .nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.index-header .nav a:hover {
+  color: #ffc107;
+}
+
+.index-header .btn-primary {
+  background: #ffc107;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.index-header .btn-primary:hover {
+  background: #e0a800;
+  color: white;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.car-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.car-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.car-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.car-item img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.car-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.car-item p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.car-item a {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.car-item a:hover {
+  background: #0056b3;
+}
+
+.filter-form {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.filter-item {
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.filter-item label {
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-item input,
+.filter-item select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  color: #495057;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filter-item input:focus,
+.filter-item select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.filter-item input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.filter-item input[type="number"]::-webkit-inner-spin-button,
+.filter-item input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.filter-item span {
+  font-weight: bold;
+  margin: 0 5px;
+  color: #333;
+}
+
+.filter-btn {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.filter-btn:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #868e96;
+  font-size: 0.9rem;
+  padding: 10px 0;
+  border-top: 2px solid #ddd;
+}
+
+.car-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.car-details img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.car-details .info {
+  text-align: left;
+}
+
+.car-details h2 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.car-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.car-details ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
+  padding-left: 10px;
+  position: relative;
+}
+
+.car-details ul li::before {
+  content: "•";
+  color: #007bff;
+  font-weight: bold;
+  display: inline-block;
+  width: 10px;
+  margin-right: 10px;
+}
+
+.booking-form {
+  max-width: 600px;
+  margin: 30px auto;
+  background: #f8f9fa;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.booking-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+.booking-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.booking-form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.booking-form button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.booking-form button:hover {
+  background: #0056b3;
+}
+
+.back-button {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 15px;
+  background: #6c757d;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+.back-button:hover {
+  background: #5a6268;
+}
+booking-confirmation h2 {
+  font-size: 2rem;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.booking-confirmation p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.booking-confirmation p strong {
+  color: #007bff;
+}
+
+.booking-confirmation a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.booking-confirmation a:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.success-message {
+  background-color: #e6f9e6;
+  padding: 20px;
+  border: 1px solid #28a745;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.register-form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.register-form-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.register-form-container p {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.register-form-container label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #495057;
+}
+
+.register-form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #495057;
+}
+
+.register-form-container input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.register-form-container button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.register-form-container button:hover {
+  background: #0056b3;
+}
+
+.register-form-container .error,
+.register-form-container .success {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.register-form-container .error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.register-form-container .success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.register-form-container a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.register-form-container a:hover {
+  color: #0056b3;
+}
+
+/* Login Form */
+.login-form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-form-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.login-form-container p {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.login-form-container label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #495057;
+}
+
+.login-form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #495057;
+}
+
+.login-form-container input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.login-form-container button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-form-container button:hover {
+  background: #0056b3;
+}
+
+.login-form-container .error {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.login-form-container a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.login-form-container a:hover {
+  color: #0056b3;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-header h2 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.profile-header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.reservations-container {
+  margin-top: 20px;
+}
+
+.reservations-container h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+.reservation-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+}
+
+.reservation-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.reservation-item .delete-btn {
+  padding: 8px 12px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.reservation-item .delete-btn:hover {
+  background: #c82333;
+}
+
+.logout-btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.logout-btn:hover {
+  background: #0056b3;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.form-container label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-container input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+  background: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table thead {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tbody tr:hover {
+  background: #f1f1f1;
+}
+
+table a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+table a:hover {
+  color: #0056b3;
+}
+
+table .btn {
+  padding: 8px 12px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+table .btn:hover {
+  background: #c82333;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  table th,
+  table td {
+    padding: 10px;
+  }
+}
+
+.unavailable-day {
+  background-color: #f8d7da !important;
+  color: #721c24 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  border-radius: 50%;
+  border: 1px solid #f5c6cb !important;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  animation: slideIn 0.3s ease;
+}
+
+.modal .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal .close:hover {
+  color: #333;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background-color: #6c757d;
+}
+
+.btn.secondary:hover {
+  background-color: #5a6268;
+}
+
+.modal .success-message {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.modal .error-message {
+  color: #dc3545;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
